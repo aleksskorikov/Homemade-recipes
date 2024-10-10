@@ -1,0 +1,136 @@
+.book-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-open {
+    width: 100%;
+    max-width: 1000px;
+    height: 700px;
+    display: flex;
+    padding: 20px;
+    gap: 2px;
+    
+}
+
+.book-left,
+.book-right {
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0 0 25px #000000b3;
+    border-top: 10px solid rgb(14, 94, 14);
+    border-bottom: 10px solid rgb(14, 94, 14);
+    font-family: "Pacifico", cursive;
+}
+
+.book-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 10px solid #0e5e0e;
+    border-radius: 5px 0 0 5px;
+    background: linear-gradient(90deg, rgba(236, 238, 135, 1) 55%, rgba(139, 140, 50, 1) 100%);
+}
+
+
+.book-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 10px solid rgb(14, 94, 14);
+    border-radius: 0 5px 5px 0;
+    background: linear-gradient(90deg, rgba(171, 171, 59, 1) 0%, rgba(236, 238, 135, 1) 55%);
+}
+.book-text {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 3rem;
+}
+
+.recipe-list {
+    list-style: decimal;
+    margin: 3rem;
+}
+
+.book-recipe{
+    font-size: 1.5rem;
+    margin: 10px 0;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s ease;
+    &:hover{
+        color: gray;
+    }
+}
+.recipe-linck{
+    color: black;
+}
+.img-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-block-img {
+    width: 15rem;
+    height: 22rem;
+    margin: 0.5rem 0;
+}
+.home-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.button-home {
+    display: flex;
+    justify-content: center;
+}
+
+.to-home {
+    text-transform: uppercase;
+    padding: 0.8rem 1rem;
+    background-color: rgba(193, 159, 46, 0.644);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 0;
+    color: black;
+    &:hover{
+        background-color: rgba(137, 108, 13, 0.644);
+        color: whitesmoke;
+    }
+}
+
+.add-recipe-btn{
+    display: block;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    background-color: rgb(9, 200, 9);
+    color: whitesmoke;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.pagination-controls{
+    margin: 0 0 1.5rem 0;
+}
+
+.pagination-caunt{
+    margin: 0 1rem 0 1rem;
+}
+
+.pagination-btns{
+    width: 8rem;
+    padding:5px 10px;
+    background-color:inherit;
+    border-radius: 10px;
+    color:black;
+}

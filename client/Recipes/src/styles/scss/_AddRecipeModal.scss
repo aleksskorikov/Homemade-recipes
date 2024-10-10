@@ -1,0 +1,116 @@
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 15rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem;
+    font-weight: bold;
+}
+
+.modal {
+
+    // .modal__form-lable
+
+    &__form-lable {
+        font-size: 1.5rem;
+    }
+
+    // .modal__form-input
+
+    &__form-input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    // .modal__form-btn-ok
+
+    &__form-btn-ok {
+        display: block;
+        width: 15rem;
+        height: 2rem;
+        background-color: green;
+        border-radius: 5px;
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin: 2rem auto 0;
+    }
+
+    &__form-btn-add {
+        width: 15rem;
+        height: 2rem;
+        padding: 0.5rem;
+        background-color: green;
+        border-radius: 5px;
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    &__form-subtitle{
+        font-size: 2rem;
+        margin: 1rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &__form-textarea{
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    &__form-btn-no{
+        display: block;
+        width: 15rem;
+        height: 2rem;
+        background-color: red;
+        border-radius: 5px;
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin: 2rem auto 0;
+    }
+
+}
+
+.modal-actions{
+    display: flex;
+}
+
+
