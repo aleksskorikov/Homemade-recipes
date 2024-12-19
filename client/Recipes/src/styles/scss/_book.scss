@@ -1,0 +1,89 @@
+@import './changeable';
+@import './mixins';
+@import "./_templates";
+
+
+.book-page {
+    @extend %flex-center;
+}
+
+.book-open {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 700px;
+    padding: 20px;
+    gap: 2px;
+}
+
+.book-left,
+.book-right {
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0 0 25px $book-box-shadow;
+    border-top: 10px solid $book-box-border;
+    border-bottom: 10px solid $book-box-border;
+}
+
+.book-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 10px solid $book-box-border;
+    border-radius: 5px 0 0 5px;
+    background: linear-gradient(90deg, rgba(236, 238, 135, 1) 55%, rgba(139, 140, 50, 1) 100%);
+}
+
+
+.book-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 10px solid $book-box-border;
+    border-radius: 0 5px 5px 0;
+    background: linear-gradient(90deg, rgba(171, 171, 59, 1) 0%, rgba(236, 238, 135, 1) 55%);
+}
+.book-text {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 3rem;
+}
+
+.img-block-img {
+    width: 15rem;
+    height: 22rem;
+    margin: 0.5rem 0;
+}
+.home-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.button-home {
+    display: flex;
+    justify-content: center;
+}
+
+.to-home {
+    text-transform: uppercase;
+    padding: 0.8rem 1rem;
+    background-color: hsla(46, 29%, 46%, 0.8);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 0;
+    color: $text;
+    &:hover{
+        background-color: hsla(45, 43%, 28%, 0.8);
+        color: $whitesmoke;
+    }
+}
+
+

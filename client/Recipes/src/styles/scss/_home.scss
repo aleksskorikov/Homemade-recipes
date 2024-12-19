@@ -1,0 +1,145 @@
+@import './changeable';
+@import './mixins';
+@import "./_templates";
+
+
+.main {
+    background-image: url(../../images/img/stock-vecfon.jpg);
+    background-color: $home-bg;
+    background-blend-mode: overlay;
+    padding: 3rem 0 2rem 0;
+}
+.img-block{
+    display: flex;
+    flex-direction: column;
+}
+.img-block-img{
+    width: 15rem;
+    height: 22rem;
+    margin: 0.2rem 0;
+}
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.home-description {
+    max-width: 1300px;
+    padding: 0 10px;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+    color: $text;
+}
+
+.book {
+
+    // .book__lists
+
+    &__lists {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        
+    }
+
+    // .book__lists-linck
+
+    &__lists-linck {
+        perspective: 1000px;
+    }
+
+    // .book__lists-list
+
+    &__lists-list {
+        width: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: 3px solid $gray;
+        height: 100%;
+        background: $book-list-bg;
+        border-radius: 5px;
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        transform-style: preserve-3d;
+        transform-origin: center;
+        &:hover{
+            transform: translateZ(50px) rotateY(0deg); 
+            box-shadow: 0 15px 30px $recipe-box-shadow;
+        }
+    }
+
+    // .book__logo-img
+
+    &__logo-img {
+        width: 100%;
+    }
+}
+
+.book-logo {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 1rem;
+    padding-bottom: 6rem;
+    border-bottom: 2px solid $gray;
+}
+
+.book-title {
+    font-size: 2rem;
+    line-height: 1;
+    color: $black;
+    letter-spacing: 3px;
+    text-orientation: sideways;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    align-self: center;
+    transition: transform .2s ease-in-out;
+    padding: 2rem 0;
+}
+
+.book-avtor {
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+    color: $black;
+    border-top: 2px solid $gray;
+    border-bottom: 2px solid $gray;
+    padding: 0.5rem 0;
+    margin: 0 1rem 3rem 1rem;
+}
+
+@media (max-width: 1284px) {
+
+    .home-conteiner{
+            flex-direction: column;
+        }
+    .img-block{
+        flex-direction: row;
+        gap: 2rem;
+        .img-block-img {
+            width: 25rem;
+            height: 25rem;
+        }
+    }
+    .book {
+
+        &__lists {
+            flex-wrap: wrap; 
+        }
+    }
+}
+
+@media (max-width: 541px) {
+    .img-block {
+        flex-direction: column;
+    }
+
+}

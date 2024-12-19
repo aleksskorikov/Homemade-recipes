@@ -1,0 +1,254 @@
+@import './changeable';
+@import './mixins';
+@import "./_templates";
+
+.book-container {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+}
+
+.book {
+    position: relative;
+    width: min(100vw, 1000px);
+    height: min(60vw, 600px);
+    perspective: min(300vw, 3000px);
+}
+
+.page-container {
+    position: absolute;
+    height: inherit;
+    width: min(50vw, 500px);
+    cursor: pointer;
+    transition: 0.5s transform ease-in-out;
+    transform-style: preserve-3d;
+    transform-origin: left;
+}
+
+.page-a {
+    transform: translate(50%) rotateY(0deg);
+    z-index: 10;
+}
+
+.page-b {
+    transform: translate(50%) rotateY(0deg);
+    z-index: 5;
+}
+
+
+.page {
+    position: absolute;
+    backface-visibility: hidden;
+    height: inherit;
+    width: inherit;
+    padding: min(10px, 1vw) min(15px, 1.5vw);
+}
+
+.front {
+    border-radius: 5px 15px 15px 5px;
+}
+
+.back {
+    border-radius: 15px 5px 5px 15px;
+    transform: rotateY(180deg);
+}
+
+.page-a-front{
+    background: $book-front;
+    background-image: url('https://zupimages.net/up/21/47/zxra.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.page-a-front {
+    font-family: 'Alice', serif;
+    color: $page-front-color;
+
+    h1 {
+        position: absolute;
+        font-size: min(56px, 5.6vw);
+        text-align: center;
+        top: 35%;
+        left: 50%;
+        text-shadow: 5px 2.5px 0 hsl(0deg, 0%, 0%, .25);
+        transform: translate(-50%, -50%);
+    }
+
+    h2 {
+        position: absolute;
+        font-size: min(24px, 2.4vw);
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h3 {
+        position: absolute;
+        font-size: min(16px, 1.6vw);
+        font-style: italic;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.page-a-back {
+    background: linear-gradient(90deg, hsl(36, 48%, 80%) 30%, hsl(36, 48%, 70%), hsl(36, 48%, 25%));
+    padding: 3rem;
+}
+
+.page-b-front{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, hsl(36, 48%, 25%), hsl(36, 48%, 70%), hsl(36, 48%, 80%) 60%);
+    padding: 3rem 2rem 3rem 7rem;
+}
+
+.page-a-back,
+.page-b {
+    line-height: min(24px, 2.4vw);
+    font-size: min(16px, 1.6vw);
+
+    p {
+        margin-bottom: min(5px, 0.5vw);
+    }
+
+    p::first-letter {
+        font-size: min(24px, 2.4vw);
+    }
+}
+
+.page-text {
+    font-size: 1.5rem;
+    color: $text;
+}
+
+.addrecipe-btn {
+    display: block;
+    margin: 10% auto;
+    padding: 5px 20px;
+    @extend %add-recire-btn;
+    font-size: 1.5rem;
+}
+
+
+.recipes-list {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    color: $text;
+    padding: 0 0.5rem;
+    &::before{
+        content: '\1F37D';
+        font-size: 3rem;
+        margin-left: -4rem;
+        padding-right: 1rem;
+        color: $link-content-color;
+    }
+}
+
+.recipes-link {
+    font-size: 2rem;
+    color: $text;
+
+    &:hover {
+        color: $text-hover;
+    }
+}
+
+.recipes-lists{
+    list-style-type: none;
+    
+}
+
+.recipes-text-clue{
+    font-size: 1.5rem;
+    color:$text;
+    margin-left: -3.5rem;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__btn-previous, &__btn-next{
+        @extend %add-recire-btn;
+    }
+}
+
+.btn-adaptiv{
+    display: none;
+}
+
+
+@media (max-width: 541px) {
+
+    .btn-adaptiv {
+            display: block;
+        }
+    .page-a {
+        display: none;
+    }
+
+    .page-b {
+        transform: translate(0%) rotateY(0deg)!important;
+        width: 25rem;
+        min-height: 30rem;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .book-container {
+        transform: translate(0%) rotateY(0deg);
+        display: block;
+        overflow: visible;
+        width: 100vw;
+    }
+
+    .addrecipe-btn,
+    .recipes-list,
+    .pagination {
+        font-size: 1rem;
+    }
+
+    .recipes-link,
+    .recipes-text-clue {
+        font-size: 1.2rem;
+    }
+
+    .page-b-front {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+
+    .recipes-text-clue {
+        margin-left: 0;
+    }
+
+    .pagination__btn-previous,
+    .pagination__btn-next {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+
+    .recipes-list {
+        margin-left: 4rem;
+        &::before {
+            margin-left: -4rem;
+        }
+    }
+
+    .book {
+        height: min(110vw, 600px);
+    }
+
+    .recipes-link,
+    .recipes-text-clue {
+        line-height: 1.5rem;
+    }
+
+}

@@ -1,0 +1,26 @@
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%add-recire-btn{
+    padding: 0.5rem 1rem;
+    background-color: $btn-bg-ok;
+    border-radius: 5px;
+    color: $whitesmoke;
+    text-transform: uppercase;
+    position: relative;
+    top: 0;
+    transition-duration: 1s;
+    &:hover{
+        background-color: $btn-bg-ok-hover;
+        color: $text;
+        font-weight: bolder;
+    }
+    &:active {
+        top: 3px;
+    }
+}
+
+

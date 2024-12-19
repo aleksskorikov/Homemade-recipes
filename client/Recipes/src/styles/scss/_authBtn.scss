@@ -1,0 +1,17 @@
+@import './changeable';
+@import './mixins';
+@import "./_templates";
+
+
+.auth-btn{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color:$auth-btn-bg;
+    margin-top: 1rem;
+    color: $text;
+    &:hover{
+        background-color: $auth-btn-bg-hover;
+        color: $whitesmoke;
+    }
+}

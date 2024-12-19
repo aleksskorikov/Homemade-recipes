@@ -1,0 +1,18 @@
+
+@import './header';
+@import './footer.scss';
+@import './changeable';
+@import './mixins';
+@import './templates';
+
+body{
+    font-family: $fontfamily-title;
+}
+.conteiner{
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+

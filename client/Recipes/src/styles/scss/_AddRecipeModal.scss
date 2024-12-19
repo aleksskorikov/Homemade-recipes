@@ -1,0 +1,115 @@
+@import './changeable';
+@import './mixins';
+@import "./_templates";
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $modal-overlay-bg;
+    overflow: auto;
+    z-index: 20;
+    @extend %flex-center;
+}
+
+.modal-contents {
+    position: relative;
+    width: 70%;
+    background: $modal-bg;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem;
+    font-weight: bold;
+}
+
+.modal {
+
+    // .modal__form-lable
+
+    &__form-lable {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.5rem;
+    }
+
+    // .modal__form-input
+
+    &__form-input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid $modal-input-border;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    // .modal__form-btn-ok
+
+    &__form-btn-ok {
+        display: block;
+        @extend %add-recire-btn;
+        margin: 2rem auto 0;
+    }
+
+    &__form-btn-add {
+        @extend %add-recire-btn;
+        margin-bottom: 2rem;
+    }
+
+    &__form-subtitle{
+        font-size: 2rem;
+        margin: 1rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &__form-textarea{
+        width: 100%;
+        padding: 10px;
+        border: 2px solid $modal-input-border;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    &__form-btn-no{
+        display: block;
+        @extend %add-recire-btn;
+        background-color: $red;
+        margin: 2rem auto 0;
+        &:hover{
+            background-color: $btn-bg-no-hover;
+        }
+    }
+
+}
+
+.modal-actions{
+    display: flex;
+}
+
+@media (max-width: 541px) {
+    .modal-overlay {
+        overflow: visible;
+    }
+}
+
+
+
